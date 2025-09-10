@@ -16,6 +16,7 @@ public class Search
         int[] arr = { 1, 5, 3, 7, 9 };
         int itemToFind = GetUserInput<int>("Enter an integer to find its index in the array: ");
         int index = FindIndex(arr, itemToFind);
+        PrintArray(arr);
         if (index != -1)
         {
             Console.WriteLine($"Item {itemToFind} found at index: {index}");
@@ -35,6 +36,10 @@ public class Search
             }
         }
         return -1; // Return -1 if the item is not found, why do we return -1?
+    }
+    public static void PrintArray(int[] arr)
+    {
+        Console.WriteLine("Array contents: [" + string.Join(", ", arr) + "]");
     }
     /// <summary> Prompts the user for input and ensures a non-empty string is returned. This is the non-generic overload.</summary>
     /// <param name="prompt">The message to display to the user.</param>
